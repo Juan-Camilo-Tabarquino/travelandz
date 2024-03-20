@@ -1,7 +1,9 @@
-import { ReactElement } from 'react'
+import { Inter } from "next/font/google";
 
-export default function Home (): ReactElement {
+const inter = Inter({ subsets: ["latin"] });
+
+export default function Home() {
   return (
-    <h1>sdfhsdfhsh</h1>
-  )
+    <h1>sdhvbisudbviusdv</h1>
+  );
 }
