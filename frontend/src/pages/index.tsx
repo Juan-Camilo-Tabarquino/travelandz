@@ -1,7 +1,9 @@
-import { ReactElement } from 'react'
+import { Button } from "antd";
 
-export default function Home (): ReactElement {
+export default function Home() {
   return (
-    <h1>sdfhsdfhsh</h1>
-  )
+    <Button>
+      Prueba
+    </Button>
+  );
 }
