@@ -48,7 +48,11 @@ export default function Document() {
   return (
     <Html lang="es">
       <Head />
-      <body>
+      <body
+        style={{
+          margin: 0
+        }}
+      >
         <Main />
         <NextScript />
       </body>
