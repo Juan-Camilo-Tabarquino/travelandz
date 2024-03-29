@@ -1,10 +1,10 @@
-import NavMenu from "@/commons/NavMenu";
-import { Col, ConfigProvider, Image, Layout, Row, Typography } from "antd";
+import NavMenu from '@/commons/NavMenu'
+import { Col, ConfigProvider, Image, Layout, Row, Typography } from 'antd'
 
-const { Header, Content } = Layout;
-const { Paragraph, Title } = Typography;
+const { Header, Content } = Layout
+const { Paragraph, Title } = Typography
 
-export default function Home() {
+export default function Home () {
   return (
       <Row>
         <Col span={8}>
@@ -22,7 +22,7 @@ export default function Home() {
         <Col span={16}>
           <Layout
             style={{
-              height: '100vh',
+              height: '100vh'
             }}
           >
             <Header
@@ -36,7 +36,7 @@ export default function Home() {
             </Header>
             <Content
               style={{
-                backgroundColor: '#4654A3',
+                backgroundColor: '#4654A3'
               }}
             >
               <ConfigProvider
@@ -59,7 +59,7 @@ export default function Home() {
                     </Title>
                     <Paragraph>
                       Tu destino comienza aquí. En Travelandz, nos apasiona ofrecerte una experiencia de viaje sin complicaciones y llena de aventuras desde el momento en que aterrizas en tu destino.
-                    </Paragraph>          
+                    </Paragraph>
                   </Col>
                 </Row>
               </ConfigProvider>
@@ -67,5 +67,5 @@ export default function Home() {
           </Layout>
         </Col>
       </Row>
-  );
+  )
 }
