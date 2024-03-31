@@ -1,8 +1,8 @@
 import crypto from 'crypto'
 
 function generarSHA (): string {
-  const apiKey = '6c283a51234f840091c29b61fdb0a8cf'
-  const secret = '79441ee756'
+  const apiKey = 'c3cd403d5767157b37e931461fabe51b'
+  const secret = '71cf5113e6'
 
   const currentTimestamp = Math.floor(Date.now() / 1000)
 

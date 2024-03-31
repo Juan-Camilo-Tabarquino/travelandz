@@ -1,16 +1,19 @@
 import { Button, type ButtonProps } from 'antd'
 import { set } from 'lodash'
+import { type ReactElement } from 'react'
 
 interface buttonPropioProps {
   title: string
   nav?: boolean
-  buttonProps: ButtonProps
+  buttonProps?: ButtonProps
+  secondIcon?: ReactElement
 }
 
 function ButtonPropio ({
   title,
-  buttonProps,
-  nav = false
+  buttonProps = {},
+  nav = false,
+  secondIcon
 }: buttonPropioProps) {
   if (nav) {
     set(buttonProps, ['style'], {
@@ -27,6 +30,9 @@ function ButtonPropio ({
         {...buttonProps}
     >
         {title}
+        {
+          secondIcon ?? null
+        }
     </Button>
   )
 }

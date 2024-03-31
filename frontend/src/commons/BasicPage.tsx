@@ -12,7 +12,8 @@ export default function BasicPage ({
   return (
     <Layout
       style={{
-        height: '100vh'
+        backgroundColor: '#E6E9F5',
+        height: '100%'
       }}
     >
         <Header
@@ -25,11 +26,7 @@ export default function BasicPage ({
               logo
             />
         </Header>
-        <Content
-            style={{
-              backgroundColor: '#E6E9F5'
-            }}
-        >
+        <Content>
             {children}
         </Content>
     </Layout>

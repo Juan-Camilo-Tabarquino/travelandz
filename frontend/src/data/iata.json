@@ -1,0 +1,228 @@
+{
+  "codigos": [
+    {
+      "nombre": "Aeropuerto Adolfo Suárez Madrid-Barajas",
+      "IATA": "MAD"
+    },
+    {
+      "nombre": "Aeropuerto de Barcelona-El Prat",
+      "IATA": "BCN"
+    },
+    {
+      "nombre": "Aeropuerto de Palma de Mallorca",
+      "IATA": "PMI"
+    },
+    {
+      "nombre": "Aeropuerto de Málaga-Costa del Sol",
+      "IATA": "AGP"
+    },
+    {
+      "nombre": "Aeropuerto de Alicante-Elche",
+      "IATA": "ALC"
+    },
+    {
+      "nombre": "Aeropuerto de Gran Canaria",
+      "IATA": "LPA"
+    },
+    {
+      "nombre": "Aeropuerto de Tenerife Sur",
+      "IATA": "TFS"
+    },
+    {
+      "nombre": "Aeropuerto de Valencia",
+      "IATA": "VLC"
+    },
+    {
+      "nombre": "Aeropuerto de Ibiza",
+      "IATA": "IBZ"
+    },
+    {
+      "nombre": "Aeropuerto de Seville",
+      "IATA": "SVQ"
+    },
+    {
+      "nombre": "Aeropuerto de Lanzarote",
+      "IATA": "ACE"
+    },
+    {
+      "nombre": "Aeropuerto de Tenerife Norte",
+      "IATA": "TFN"
+    },
+    {
+      "nombre": "Aeropuerto de Fuerteventura",
+      "IATA": "FUE"
+    },
+    {
+      "nombre": "Aeropuerto de Santiago de Compostela",
+      "IATA": "SCQ"
+    },
+    {
+      "nombre": "Aeropuerto de Granada-Jaén",
+      "IATA": "GRX"
+    },
+    {
+      "nombre": "Aeropuerto de Menorca",
+      "IATA": "MAH"
+    },
+    {
+      "nombre": "Aeropuerto de Bilbao",
+      "IATA": "BIO"
+    },
+    {
+      "nombre": "Aeropuerto de Tenerife Norte",
+      "IATA": "TFN"
+    },
+    {
+      "nombre": "Aeropuerto de Almería",
+      "IATA": "LEI"
+    },
+    {
+      "nombre": "Aeropuerto de Zaragoza",
+      "IATA": "ZAZ"
+    },
+    {
+      "nombre": "Aeropuerto de Jerez de la Frontera",
+      "IATA": "XRY"
+    },
+    {
+      "nombre": "Aeropuerto de Valladolid",
+      "IATA": "VLL"
+    },
+    {
+      "nombre": "Aeropuerto de Girona-Costa Brava",
+      "IATA": "GRO"
+    },
+    {
+      "nombre": "Aeropuerto de Pamplona",
+      "IATA": "PNA"
+    },
+    {
+      "nombre": "Aeropuerto de La Palma",
+      "IATA": "SPC"
+    },
+    {
+      "nombre": "Aeropuerto de La Coruña",
+      "IATA": "LCG"
+    },
+    {
+      "nombre": "Aeropuerto de Reus",
+      "IATA": "REU"
+    },
+    {
+      "nombre": "Aeropuerto de Badajoz",
+      "IATA": "BJZ"
+    },
+    {
+      "nombre": "Aeropuerto de Asturias",
+      "IATA": "OVD"
+    },
+    {
+      "nombre": "Aeropuerto de Melilla",
+      "IATA": "MLN"
+    },
+    {
+      "nombre": "Aeropuerto de Lleida-Alguaire",
+      "IATA": "ILD"
+    },
+    {
+      "nombre": "Aeropuerto de La Gomera",
+      "IATA": "GMZ"
+    },
+    {
+      "nombre": "Aeropuerto de El Hierro",
+      "IATA": "VDE"
+    },
+    {
+      "nombre": "Aeropuerto de Castellón-Costa Azahar",
+      "IATA": "CDT"
+    },
+    {
+      "nombre": "Aeropuerto de Albacete",
+      "IATA": "ABC"
+    },
+    {
+      "nombre": "Aeropuerto de Burgos",
+      "IATA": "RGS"
+    },
+    {
+      "nombre": "Aeropuerto de Logroño-Agoncillo",
+      "IATA": "RJL"
+    },
+    {
+      "nombre": "Aeropuerto de San Sebastián",
+      "IATA": "EAS"
+    },
+    {
+      "nombre": "Aeropuerto de León",
+      "IATA": "LEN"
+    },
+    {
+      "nombre": "Aeropuerto de Córdoba",
+      "IATA": "ODB"
+    },
+    {
+      "nombre": "Aeropuerto de Salamanca",
+      "IATA": "SLM"
+    },
+    {
+      "nombre": "Aeropuerto de Son Bonet",
+      "IATA": "LES"
+    },
+    {
+      "nombre": "Aeropuerto de Castellón-Costa Azahar",
+      "IATA": "CDT"
+    },
+    {
+      "nombre": "Aeropuerto de La Seu d'Urgell",
+      "IATA": "LEU"
+    },
+    {
+      "nombre": "Aeropuerto de Albacete",
+      "IATA": "ABC"
+    },
+    {
+      "nombre": "Aeropuerto de Murcia-Corvera",
+      "IATA": "RMU"
+    },
+    {
+      "nombre": "Aeropuerto de Teruel",
+      "IATA": "TEV"
+    },
+    {
+      "nombre": "Aeropuerto de Cuatro Vientos",
+      "IATA": "ECV"
+    },
+    {
+      "nombre": "Aeropuerto de Ceuta",
+      "IATA": "JCU"
+    },
+    {
+      "nombre": "Aeropuerto de Son Bonet",
+      "IATA": "LES"
+    },
+    {
+      "nombre": "Aeropuerto de León",
+      "IATA": "LEN"
+    },
+    {
+      "nombre": "Aeropuerto de Salamanca",
+      "IATA": "SLM"
+    },
+    {
+      "nombre": "Aeropuerto de Huesca-Pirineos",
+      "IATA": "HSK"
+    },
+    {
+      "nombre": "Aeropuerto de Son Bonet",
+      "IATA": "LES"
+    },
+    {
+      "nombre": "Aeropuerto de León",
+      "IATA": "LEN"
+    },
+    {
+      "nombre": "Aeropuerto de Salamanca",
+      "IATA": "SLM"
+    }
+  ]
+  }
