@@ -4,16 +4,18 @@ import InputWithButtons from '@/commons/components/InputWithButtons'
 import { type pasajeros } from '@/commons/types'
 import useTransfer from '@/hooks/useTransfer'
 import { DownOutlined, SearchOutlined, UpOutlined, UserAddOutlined } from '@ant-design/icons'
-import { Col, DatePicker, type GetProps, Input, Row, Space, Modal, Select } from 'antd'
+import { Col, DatePicker, type GetProps, Input, Row, Space, Modal, Select, notification, Typography } from 'antd'
 import dayjs from 'dayjs'
 import { type CSSProperties, useRef, useState } from 'react'
 import iatas from '@/data/iata.json'
-import { forEach, map, set } from 'lodash'
+import { forEach, isEmpty, map, set } from 'lodash'
 import TransfersList from '@/commons/TransfersList'
 
 const { Compact } = Space
 const { RangePicker } = DatePicker
 const { Option } = Select
+const { Title } = Typography
+
 const { codigos } = iatas
 const dateFormat: Intl.DateTimeFormatOptions = {
   year: 'numeric',
@@ -21,7 +23,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
   day: '2-digit',
   hour: '2-digit',
   minute: '2-digit',
-  hour12: false // Usa el formato de 24 horas
+  hour12: false
 }
 
 type RangePickerProps = GetProps<typeof DatePicker.RangePicker>
@@ -33,6 +35,8 @@ export default function Booking () {
     return current && current < dayjs().startOf('day')
   }
   const [isOpen, setIsOpen] = useState(false)
+  const [isFetching, setIsFetching] = useState(false)
+  const [isResponseEmpty, setIsResponseEmpty] = useState(false)
   const [desde, setDesde] = useState('')
   const [hasta, setHasta] = useState<string>('')
   const [fecha, setFecha] = useState({
@@ -41,18 +45,19 @@ export default function Booking () {
     fechaRetorno: '',
     horaRetorno: ''
   })
-  const buttonRef = useRef<HTMLButtonElement>(null)
   const [pasajeros, setPasajeros] = useState<pasajeros>({
     adultos: 1,
     ninios: 0,
     infantes: 0
   })
+  const buttonRef = useRef<HTMLButtonElement>(null)
   const showModal = () => {
     setIsOpen(true)
   }
   const {
     transfers,
-    getTransfers
+    getTransfers,
+    bookingTransfer
   } = useTransfer()
   const buttonPosition = buttonRef.current?.getBoundingClientRect()
 
@@ -88,8 +93,30 @@ export default function Booking () {
             return updatedDate
           }
         )
-      console.log(fecha)
     })
+  }
+
+  const onClick = async () => {
+    setIsFetching(!isFetching)
+    setIsResponseEmpty(false)
+    if (desde !== '' && hasta !== '' && fecha.fechaSalida !== '' && fecha.horaSalida !== '' && fecha.fechaRetorno !== '' && fecha.horaRetorno !== '') {
+      const res = await getTransfers(pasajeros, fecha, desde, hasta)
+      if (res.status === 500) {
+        notification.error({
+          message: 'Error Buscando',
+          description: `Error reservando: ${res.code}`
+        })
+      }
+      if (isEmpty(res)) {
+        setIsResponseEmpty(true)
+      }
+    } else {
+      notification.error({
+        message: 'Error Buscando',
+        description: 'Los campos no pueden estar vacios, por favor diligencie toda la informacion'
+      })
+    }
+    setIsFetching(false)
   }
 
   const handleAdd = (v: keyof typeof pasajeros) => {
@@ -107,7 +134,6 @@ export default function Booking () {
       return updatedPasajeros
     })
   }
-  console.log(transfers)
   return (
         <BasicPage>
           <>
@@ -126,14 +152,23 @@ export default function Booking () {
                     borderRadius: 10
                   }}
                 >
-                  <Space direction="horizontal" size="small" style={{ width: '100%', display: 'flex' }}>
-                    <Compact style={{ flex: '1 1 500px' }}>
+                  <Space
+                    direction="horizontal"
+                    size="small"
+                    style={{
+                      minWidth: '100%',
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      flexDirection: 'row',
+                      justifyContent: 'space-evenly'
+                    }}>
+                    <Compact>
                         <Select
                           showSearch
                           placeholder="Origen"
                           size="large"
                           style={{
-                            width: '50%'
+                            width: '350px'
                           }}
                           dropdownStyle={{
                             width: '325px'
@@ -160,7 +195,7 @@ export default function Booking () {
                       showTime
                       format={'YYYY-MM-DD hh:mm'}
                       style={{
-                        flex: '1 1 500px'
+                        width: '350px'
                       }}
                       onChange={(e) => { handleDate(e) }}
                     />
@@ -186,7 +221,8 @@ export default function Booking () {
                         size: 'large',
                         icon: <SearchOutlined />,
                         // eslint-disable-next-line @typescript-eslint/no-misused-promises
-                        onClick: async () => { await getTransfers(pasajeros, fecha, desde, hasta) }
+                        onClick,
+                        loading: isFetching
                       }}
                     />
                     <Modal
@@ -237,9 +273,23 @@ export default function Booking () {
                    </Space>
                 </Col>
             </Row>
-            <TransfersList
-              transfers={transfers}
-            />
+            {
+              !isEmpty(transfers)
+                ? <TransfersList
+                      transfers={transfers}
+                      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+                      bookingClick={bookingTransfer}
+                    />
+                : <Row
+                    justify="center"
+                  >
+                  <Title level={3}>
+                    {
+                      isResponseEmpty ? 'Sin Información' : 'Realiza una busqueda para ver los transfers disponibles'
+                    }
+                  </Title>
+                </Row>
+            }
           </>
         </BasicPage>
   )

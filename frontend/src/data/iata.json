@@ -69,10 +69,6 @@
       "IATA": "BIO"
     },
     {
-      "nombre": "Aeropuerto de Tenerife Norte",
-      "IATA": "TFN"
-    },
-    {
       "nombre": "Aeropuerto de Almería",
       "IATA": "LEI"
     },
@@ -169,16 +165,8 @@
       "IATA": "LES"
     },
     {
-      "nombre": "Aeropuerto de Castellón-Costa Azahar",
-      "IATA": "CDT"
-    },
-    {
       "nombre": "Aeropuerto de La Seu d'Urgell",
       "IATA": "LEU"
-    },
-    {
-      "nombre": "Aeropuerto de Albacete",
-      "IATA": "ABC"
     },
     {
       "nombre": "Aeropuerto de Murcia-Corvera",
@@ -197,32 +185,8 @@
       "IATA": "JCU"
     },
     {
-      "nombre": "Aeropuerto de Son Bonet",
-      "IATA": "LES"
-    },
-    {
-      "nombre": "Aeropuerto de León",
-      "IATA": "LEN"
-    },
-    {
-      "nombre": "Aeropuerto de Salamanca",
-      "IATA": "SLM"
-    },
-    {
       "nombre": "Aeropuerto de Huesca-Pirineos",
       "IATA": "HSK"
-    },
-    {
-      "nombre": "Aeropuerto de Son Bonet",
-      "IATA": "LES"
-    },
-    {
-      "nombre": "Aeropuerto de León",
-      "IATA": "LEN"
-    },
-    {
-      "nombre": "Aeropuerto de Salamanca",
-      "IATA": "SLM"
     }
   ]
-  }
+}

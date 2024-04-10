@@ -1,12 +1,12 @@
 import crypto from 'crypto'
+import 'dotenv/config'
 
 function generarSHA (): string {
-  const apiKey = 'c3cd403d5767157b37e931461fabe51b'
-  const secret = '71cf5113e6'
-
+  const API_KEY = process.env.API_KEY ?? ''
+  const SECRET = process.env.SECRET ?? ''
   const currentTimestamp = Math.floor(Date.now() / 1000)
 
-  const message = `${apiKey}${secret}${currentTimestamp}`
+  const message = `${API_KEY}${SECRET}${currentTimestamp}`
 
   const hash = crypto.createHash('sha256').update(message).digest('hex')
 

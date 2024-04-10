@@ -13,7 +13,9 @@ export default function BasicPage ({
     <Layout
       style={{
         backgroundColor: '#E6E9F5',
-        height: '100%'
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column'
       }}
     >
         <Header
@@ -26,7 +28,12 @@ export default function BasicPage ({
               logo
             />
         </Header>
-        <Content>
+        <Content
+          style={{
+            backgroundColor: '#E6E9F5',
+            flex: 1
+          }}
+        >
             {children}
         </Content>
     </Layout>
